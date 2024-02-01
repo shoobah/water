@@ -8,7 +8,6 @@ export function getPossibleMoves(grid, x, y) {
     var newX = x + d.x
     var newY = y + d.y
     if (newX >= 0 && newX < grid[0].length && newY >= 0 && newY < grid.length) {
-      console.log(newX, newY,grid[newY][newX], val)
       if(grid[newY][newX] <= val){
         possibleMoves.push({x: newX, y: newY})
       }
