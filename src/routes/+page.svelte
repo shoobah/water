@@ -25,10 +25,6 @@
 		findAll(theGrid, startX, startY);
 	}
 
-	function checkMove(col, row) {
-		return pm?.some((cell) => cell.x === col && cell.y === row);
-	}
-
 	function checkVisited(col, row) {
 		return visited?.some((cell) => cell.x === col && cell.y === row);
 	}
@@ -45,7 +41,6 @@
 				<div
 					style="grid-row: {row + 1}; grid-column: {col + 1};"
 					class="cell"
-					class:water={checkMove(col, row)}
 					class:start={startX === col && startY === row}
 					class:visited={checkVisited(col, row)}
 				>
@@ -78,14 +73,11 @@
 		justify-content: center;
 		align-items: center;
 	}
-	.water {
-		background-color: rgb(142, 142, 255);
-	}
-
+  
 	.visited {
-		background-color: rgb(142, 255, 142);
-	}
-
+    background-color: rgb(142, 142, 255);
+  }
+  
 	.start {
 		background-color: rgb(255, 142, 142);
 	}
